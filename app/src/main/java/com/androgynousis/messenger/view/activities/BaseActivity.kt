@@ -14,6 +14,7 @@ open class BaseActivity : AppCompatActivity() {
     @JvmField
     var toolbar: Toolbar? = null
     var title: TextView? = null
+
     fun changeTitle(toolbarId: Int, titlePage: String?) {
         toolbar = findViewById<View>(toolbarId) as Toolbar
         setSupportActionBar(toolbar)

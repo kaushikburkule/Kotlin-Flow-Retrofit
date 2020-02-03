@@ -6,13 +6,18 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.androgynousis.messenger.view.activities.MainActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         app:elevation="0dp">
+
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar"/>
+            layout="@layout/toolbar" />
+
     </com.google.android.material.appbar.AppBarLayout>
+
     <include layout="@layout/content_conversation" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

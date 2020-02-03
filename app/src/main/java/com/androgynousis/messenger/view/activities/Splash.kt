@@ -22,7 +22,7 @@ class Splash : AppCompatActivity() {
             window.statusBarColor = Color.TRANSPARENT
         }
 
-        Handler().postDelayed({ startActivity(Intent(this@Splash, PhoneNumberActivity::class.java)).also { finish() } }, 1000.toLong())
+        Handler().postDelayed({ startActivity(Intent(this@Splash, PhoneNumberActivity::class.java)).also { finish() } }, 500.toLong())
 
     }
 

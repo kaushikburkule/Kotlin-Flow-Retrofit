@@ -9,4 +9,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="continues">Continue</string>
+    <string name="please_confirm_your_country_code">Please confirm your country code</string>
+    <string name="phone_number">Phone number</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="india_91">India (+91)</string>
+    <string name="delete_3">Delete (3)</string>
 </resources>
