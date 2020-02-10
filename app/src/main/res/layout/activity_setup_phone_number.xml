@@ -12,9 +12,21 @@
         android:layout_height="wrap_content"
         app:elevation="0dp">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Light"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/h1" />
+
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
