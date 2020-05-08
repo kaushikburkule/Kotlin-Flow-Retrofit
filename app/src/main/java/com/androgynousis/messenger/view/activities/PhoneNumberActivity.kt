@@ -9,7 +9,7 @@ class PhoneNumberActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setup_phone_number)
-        setupToolbar(R.id.tv_title, "Messenger")
+        //setupToolbar(R.id.tv_title, "Messenger")
         bt_continue.setOnClickListener { startActivity(Intent(this@PhoneNumberActivity, MainActivity::class.java)) }
     }
 }

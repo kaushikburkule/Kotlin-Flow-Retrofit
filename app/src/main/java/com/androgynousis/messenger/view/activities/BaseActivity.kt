@@ -1,5 +1,6 @@
 package com.androgynousis.messenger.view.activities
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.View
 import android.widget.TextView
@@ -9,6 +10,7 @@ import androidx.appcompat.widget.Toolbar
 import com.androgynousis.messenger.R
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
+@SuppressLint("Registered")
 open class BaseActivity : AppCompatActivity() {
 
     @JvmField
@@ -41,8 +43,6 @@ open class BaseActivity : AppCompatActivity() {
         supportActionBar!!.title = ""
     }
 
-    override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
-    }
+    override fun attachBaseContext(newBase: Context) = super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
 
 }
