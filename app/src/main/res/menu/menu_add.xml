@@ -6,6 +6,6 @@
         android:id="@+id/add_contact"
         android:title="Add Contact"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_action_add"
+        android:icon="@drawable/ic_trash"
         app:showAsAction="ifRoom" />
 </menu>

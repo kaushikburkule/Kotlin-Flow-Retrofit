@@ -6,6 +6,6 @@
         android:id="@+id/new_chat"
         android:title="New Conversation"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_action_edit_icon"
+        android:icon="@drawable/ic_trash"
         app:showAsAction="ifRoom" />
 </menu>
