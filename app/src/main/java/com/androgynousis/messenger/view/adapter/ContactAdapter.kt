@@ -13,10 +13,9 @@ import com.androgynousis.messenger.R
 import com.androgynousis.messenger.model.Contact
 
 class ContactAdapter(private val mContext: Context?, private val mArrayList: List<Contact>, private val clickListener: ViewHolder.ClickListener) : SelectableAdapter<ContactAdapter.ViewHolder?>() {
-    override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): ViewHolder {
-        val itemLayoutView = LayoutInflater.from(parent.context).inflate(
-                R.layout.list_item_contact, null)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val itemLayoutView = LayoutInflater.from(parent.context).inflate(R.layout.list_item_contact, null)
         return ViewHolder(itemLayoutView, clickListener)
     }
 
@@ -25,9 +24,7 @@ class ContactAdapter(private val mContext: Context?, private val mArrayList: Lis
         viewHolder.userPhoto.setImageResource(mArrayList[position].image)
     }
 
-    override fun getItemCount(): Int {
-        return mArrayList.size
-    }
+    override fun getItemCount(): Int = mArrayList.size
 
     class ViewHolder(itemLayoutView: View, private val listener: ClickListener?) : RecyclerView.ViewHolder(itemLayoutView), View.OnClickListener, OnLongClickListener {
         var tvName: TextView = itemLayoutView.findViewById<View>(R.id.tv_user_name) as TextView

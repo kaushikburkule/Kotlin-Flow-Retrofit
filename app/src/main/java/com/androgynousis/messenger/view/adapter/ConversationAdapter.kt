@@ -10,26 +10,22 @@ import com.androgynousis.messenger.view.holder.HolderDate
 import com.androgynousis.messenger.view.holder.HolderMe
 import com.androgynousis.messenger.view.holder.HolderYou
 
-class ConversationAdapter
-(private val mContext: Context,
- private val items: MutableList<ChatData>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ConversationAdapter(private val mContext: Context, private val items: MutableList<ChatData>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
     private val DATE = 0
     private val YOU = 1
     private val ME = 2
+
     // Return the size of your dataset (invoked by the layout manager)
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun getItemCount(): Int = items.size
 
     override fun getItemViewType(position: Int): Int { //More to come
-        if (items[position].type == "0") {
-            return DATE
-        } else if (items[position].type == "1") {
-            return YOU
-        } else if (items[position].type == "2") {
-            return ME
+        return when (items[position].type) {
+            "0" -> DATE
+            "1" -> YOU
+            "2" -> ME
+            else -> -1
         }
-        return -1
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
