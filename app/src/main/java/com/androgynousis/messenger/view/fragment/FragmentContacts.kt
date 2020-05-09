@@ -7,8 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androgynousis.messenger.R
-import com.androgynousis.messenger.model.Contact
-import com.androgynousis.messenger.view.activities.MainActivity
+import com.androgynousis.messenger.model.ContactModel
 import com.androgynousis.messenger.view.adapter.ContactAdapter
 import java.util.*
 
@@ -34,12 +33,12 @@ class FragmentContacts : Fragment(), ContactAdapter.ViewHolder.ClickListener {
         return view
     }
 
-    private fun setData(): List<Contact> {
-        val data: MutableList<Contact> = ArrayList()
+    private fun setData(): List<ContactModel> {
+        val data: MutableList<ContactModel> = ArrayList()
         val name = arrayOf("Laura Owens", "Angela Price", "Donald Turner", "Kelly", "Julia Harris", "Laura Owens", "Angela Price", "Donald Turner", "Kelly", "Julia Harris")
         @DrawableRes val img = intArrayOf(R.drawable.userpic, R.drawable.user1, R.drawable.user2, R.drawable.user3, R.drawable.user4, R.drawable.userpic, R.drawable.user1, R.drawable.user2, R.drawable.user3, R.drawable.user4)
         for (i in 0..9) {
-            val contact = Contact()
+            val contact = ContactModel()
             contact.name = name[i]
             contact.image = img[i]
             data.add(contact)

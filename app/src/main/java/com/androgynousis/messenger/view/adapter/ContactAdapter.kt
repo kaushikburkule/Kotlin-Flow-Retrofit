@@ -10,9 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.androgynousis.messenger.R
-import com.androgynousis.messenger.model.Contact
+import com.androgynousis.messenger.model.ContactModel
 
-class ContactAdapter(private val mContext: Context?, private val mArrayList: List<Contact>, private val clickListener: ViewHolder.ClickListener) : SelectableAdapter<ContactAdapter.ViewHolder?>() {
+class ContactAdapter(private val mContext: Context?, private val mArrayList: List<ContactModel>, private val clickListener: ViewHolder.ClickListener) : SelectableAdapter<ContactAdapter.ViewHolder?>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemLayoutView = LayoutInflater.from(parent.context).inflate(R.layout.list_item_contact, null)

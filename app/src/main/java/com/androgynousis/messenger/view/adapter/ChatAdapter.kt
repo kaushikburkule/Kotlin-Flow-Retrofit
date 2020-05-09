@@ -11,9 +11,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.androgynousis.messenger.R
-import com.androgynousis.messenger.model.Chat
+import com.androgynousis.messenger.model.ChatModel
 
-class ChatAdapter(private val mContext: Context?, private val mArrayList: List<Chat>, private val clickListener: ViewHolder.ClickListener) : SelectableAdapter<ChatAdapter.ViewHolder?>() {
+class ChatAdapter(private val mContext: Context?, private val mArrayList: List<ChatModel>, private val clickListener: ViewHolder.ClickListener) : SelectableAdapter<ChatAdapter.ViewHolder?>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemLayoutView = LayoutInflater.from(parent.context).inflate(R.layout.list_item_chat, null)

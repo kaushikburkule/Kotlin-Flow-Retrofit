@@ -1,6 +1,6 @@
 package com.androgynousis.messenger.model
 
-class ChatData {
+class ChatDataModel {
 
     var type: String? = null
     var text: String? = null

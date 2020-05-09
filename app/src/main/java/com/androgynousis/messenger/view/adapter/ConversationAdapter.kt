@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.androgynousis.messenger.R
-import com.androgynousis.messenger.model.ChatData
+import com.androgynousis.messenger.model.ChatDataModel
 import com.androgynousis.messenger.view.holder.HolderDate
 import com.androgynousis.messenger.view.holder.HolderMe
 import com.androgynousis.messenger.view.holder.HolderYou
 
-class ConversationAdapter(private val mContext: Context, private val items: MutableList<ChatData>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ConversationAdapter(private val mContext: Context, private val items: MutableList<ChatDataModel>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val DATE = 0
     private val YOU = 1
@@ -48,8 +48,8 @@ class ConversationAdapter(private val mContext: Context, private val items: Muta
         return viewHolder
     }
 
-    fun addItem(item: Collection<ChatData?>?) {
-        items.addAll(item as Collection<ChatData>)
+    fun addItem(item: Collection<ChatDataModel?>?) {
+        items.addAll(item as Collection<ChatDataModel>)
         notifyDataSetChanged()
     }
 

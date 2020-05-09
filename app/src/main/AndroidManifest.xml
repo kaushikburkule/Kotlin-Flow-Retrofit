@@ -33,7 +33,7 @@
             android:theme="@style/AppTheme.Trans" />
 
         <activity
-            android:name="com.androgynousis.messenger.view.activities.Conversation"
+            android:name="com.androgynousis.messenger.view.activities.ConversationActivity"
             android:theme="@style/AppTheme.Trans" />
 
     </application>

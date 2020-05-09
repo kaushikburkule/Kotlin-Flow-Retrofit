@@ -1,6 +1,6 @@
 package com.androgynousis.messenger.model
 
-class Chat {
+class ChatModel {
 
     var name: String? = null
     var lastChat: String? = null
