@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.core.view.MenuItemCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -19,21 +20,21 @@ import com.androgynousis.messenger.view.fragment.FragmentHome
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    var chats: TextView? = null
+    private var chats: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setupToolbar(R.id.toolbar, "Messages")
+
         val fragmentHome = FragmentHome()
         val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
         ft.add(R.id.frameLayout, fragmentHome).commit()
 
-        val toggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer_layout!!.setDrawerListener(toggle)
-        toggle.syncState()
+        //val toggle = ActionBarDrawerToggle(this, drawer_layout, tool, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        //drawer_layout!!.setDrawerListener(toggle)
+        //toggle.syncState()
 
         nav_view!!.setNavigationItemSelectedListener(this)
         nav_view_bottom!!.setNavigationItemSelectedListener(this)
@@ -54,11 +55,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     override fun onBackPressed() {
         val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
+        if (drawer.isDrawerOpen(GravityCompat.START)) drawer.closeDrawer(GravityCompat.START) else super.onBackPressed()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -82,9 +79,12 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 ft = supportFragmentManager.beginTransaction()
                 ft.replace(R.id.frameLayout, fragmentHome).commit()
             }
-            R.id.nav_trash -> {}
-            R.id.nav_settings -> {}
-            R.id.nav_logout -> {}
+            R.id.nav_trash -> {
+            }
+            R.id.nav_settings -> {
+            }
+            R.id.nav_logout -> {
+            }
         }
         drawer_layout!!.closeDrawer(GravityCompat.START)
         return true

@@ -5,28 +5,29 @@ import android.view.Menu
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androgynousis.messenger.R
 import com.androgynousis.messenger.model.ChatData
-import com.androgynousis.messenger.view.adapter.ConversationRecyclerView
+import com.androgynousis.messenger.view.adapter.ConversationAdapter
 import java.util.*
 
-class Conversation : BaseActivity() {
+class Conversation : AppCompatActivity() {
 
     private var mRecyclerView: RecyclerView? = null
-    private var mAdapter: ConversationRecyclerView? = null
+    private var mAdapter: ConversationAdapter? = null
     private var text: EditText? = null
     private var send: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conversation)
-        setupToolbarWithUpNav(R.id.toolbar, "Julia Harriss", R.drawable.ic_action_back)
+        //setupToolbarWithUpNav(R.id.toolbar, "Julia Harriss", R.drawable.ic_action_back)
         mRecyclerView = findViewById<View>(R.id.recyclerView) as RecyclerView
         mRecyclerView!!.setHasFixedSize(true)
         mRecyclerView!!.layoutManager = LinearLayoutManager(this)
-        mAdapter = ConversationRecyclerView(this, setData() as MutableList<ChatData>)
+        mAdapter = ConversationAdapter(this, setData() as MutableList<ChatData>)
         mRecyclerView!!.adapter = mAdapter
         mRecyclerView!!.postDelayed({ mRecyclerView!!.smoothScrollToPosition(mRecyclerView!!.adapter!!.itemCount - 1) }, 1000)
         text = findViewById<View>(R.id.et_message) as EditText

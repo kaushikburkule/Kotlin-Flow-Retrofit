@@ -4,7 +4,7 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.androgynousis.messenger.view.activities.Splash"
+    tools:context="com.androgynousis.messenger.view.activities.SplashActivity"
     android:background="@drawable/bg_gradient">
 
     <ImageView

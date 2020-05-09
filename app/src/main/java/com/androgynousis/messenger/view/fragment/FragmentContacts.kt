@@ -25,7 +25,7 @@ class FragmentContacts : Fragment(), ContactAdapter.ViewHolder.ClickListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_contacts, null, false)
         activity!!.supportInvalidateOptionsMenu()
-        (activity as MainActivity?)!!.changeTitle(R.id.toolbar, "Contacts")
+        //(activity as MainActivity?)!!.changeTitle(R.id.toolbar, "Contacts")
         mRecyclerView = view.findViewById<View>(R.id.recyclerView) as RecyclerView
         mRecyclerView!!.setHasFixedSize(true)
         mRecyclerView!!.layoutManager = LinearLayoutManager(context)

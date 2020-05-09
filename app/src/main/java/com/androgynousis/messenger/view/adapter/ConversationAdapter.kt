@@ -10,7 +10,7 @@ import com.androgynousis.messenger.view.holder.HolderDate
 import com.androgynousis.messenger.view.holder.HolderMe
 import com.androgynousis.messenger.view.holder.HolderYou
 
-class ConversationRecyclerView
+class ConversationAdapter
 (private val mContext: Context,
  private val items: MutableList<ChatData>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val DATE = 0

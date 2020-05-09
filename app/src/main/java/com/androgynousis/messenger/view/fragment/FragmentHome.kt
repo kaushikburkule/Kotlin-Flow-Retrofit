@@ -29,7 +29,7 @@ class FragmentHome : Fragment(), ChatAdapter.ViewHolder.ClickListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, null, false)
         activity!!.supportInvalidateOptionsMenu()
-        (activity as MainActivity?)!!.changeTitle(R.id.toolbar, "Messages")
+//        (activity as MainActivity?)!!.changeTitle(R.id.toolbar, "Messages")
         tvSelection = view.findViewById<View>(R.id.tv_selection) as TextView
         mRecyclerView = view.findViewById<View>(R.id.recyclerView) as RecyclerView
         mRecyclerView!!.setHasFixedSize(true)
