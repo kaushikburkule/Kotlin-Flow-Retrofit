@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.androgynousis.messenger.R
 import com.androgynousis.messenger.model.ChatModel
 
-class ChatAdapter(private val mContext: Context?, private val mArrayList: List<ChatModel>, private val clickListener: ViewHolder.ClickListener) : SelectableAdapter<ChatAdapter.ViewHolder?>() {
+class ChatAdapter(private val mContext: Context?, private val mArrayList: List<ChatModel>) : SelectableAdapter<ChatAdapter.ViewHolder?>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemLayoutView = LayoutInflater.from(parent.context).inflate(R.layout.list_item_chat, null)
-        return ViewHolder(itemLayoutView, clickListener)
+        return ViewHolder(itemLayoutView)
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
@@ -43,7 +43,7 @@ class ChatAdapter(private val mContext: Context?, private val mArrayList: List<C
 
     override fun getItemCount(): Int = mArrayList.size
 
-    class ViewHolder(itemLayoutView: View, private val listener: ClickListener?) : RecyclerView.ViewHolder(itemLayoutView), View.OnClickListener, OnLongClickListener {
+    class ViewHolder(itemLayoutView: View) : RecyclerView.ViewHolder(itemLayoutView) {
 
         var tvName: TextView = itemLayoutView.findViewById<View>(R.id.tv_user_name) as TextView
         var tvTime: TextView = itemLayoutView.findViewById<View>(R.id.tv_time) as TextView
@@ -51,20 +51,6 @@ class ChatAdapter(private val mContext: Context?, private val mArrayList: List<C
         var userPhoto: ImageView = itemLayoutView.findViewById<View>(R.id.iv_user_photo) as ImageView
         val onlineView: View = itemLayoutView.findViewById(R.id.online_indicator) as View
         var checked: CheckBox = itemLayoutView.findViewById<View>(R.id.chk_list) as CheckBox
-
-        override fun onClick(v: View) { listener?.onItemClicked(adapterPosition) }
-        override fun onLongClick(view: View): Boolean = listener?.onItemLongClicked(adapterPosition) ?: false
-
-        interface ClickListener {
-            fun onItemClicked(position: Int)
-            fun onItemLongClicked(position: Int): Boolean
-            fun onCreateOptionsMenu(menu: Menu?): Boolean
-        }
-
-        init {
-            itemLayoutView.setOnClickListener(this)
-            itemLayoutView.setOnLongClickListener(this)
-        }
 
     }
 
