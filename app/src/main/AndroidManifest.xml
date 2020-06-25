@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.androgynousis.messenger.view.activities.Splash"
+            android:name="com.androgynousis.messenger.view.SplashActivity"
             android:theme="@style/AppThemeFull">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
